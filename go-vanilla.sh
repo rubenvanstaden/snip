@@ -6,25 +6,25 @@ set -e
 
 range() {
 cat << EOF
-for i, v := range $1 {
-}
+    for i, v := range $1 {
+    }
 
 EOF
 }
 
 iter() {
 cat << EOF
-for i := 0; i < $1; i++ {
-}
+    for i := 0; i < $1; i++ {
+    }
 
 EOF
 }
 
 err() {
 cat << EOF
-if err != nil {
-    log.Fatalf("$1: %v", err)
-}
+    if err != nil {
+        log.Fatalf("$1: %v", err)
+    }
 
 EOF
 }
