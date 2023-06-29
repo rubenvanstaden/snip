@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+garlic() {
+cat << EOF
+    Expense:Food:Vegetable:Garlic   $1 CAD
+EOF
+
+}
+
 carrot() {
 cat << EOF
     Expense:Food:Vegetable:Carrot $1    $2 CAD
@@ -7,17 +14,17 @@ EOF
 
 }
 
-onion() {
+yellowonion() {
 cat << EOF
-    Expense:Food:Vegetable:Onion $1    $2 CAD
+    Expense:Food:Vegetable:Yellow Onion      $1 CAD
 EOF
 
 }
 
 # Yellow, Sweet
-potato() {
+yellowpotato() {
 cat << EOF
-    Expense:Food:Vegetable:Potato $1   $2 CAD
+    Expense:Food:Vegetable:Potato Yellow   $1 CAD
 EOF
 
 }
@@ -88,6 +95,34 @@ EOF
 edamame() {
 cat << EOF
     Expense:Food:Vegetable:Edamame    $1 CAD
+EOF
+
+}
+
+broccoli() {
+cat << EOF
+    Expense:Food:Vegetable:Broccoli    $1 CAD
+EOF
+
+}
+
+greenonion() {
+cat << EOF
+    Expense:Food:Vegetable:Green Onion    $1 CAD
+EOF
+
+}
+
+gailan() {
+cat << EOF
+    Expense:Food:Vegetable:Gai Lan     $1 CAD
+EOF
+
+}
+
+youchoy() {
+cat << EOF
+    Expense:Food:Vegetable:You Choy     $1 CAD
 EOF
 
 }

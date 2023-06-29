@@ -46,3 +46,63 @@ func (s *$1) $2($3) error {
 
 EOF
 }
+
+forselect() {
+cat << EOF
+for {
+    select {
+        case <-done:
+            return
+        default:
+            // Do non-preemptable work
+    }
+}
+
+EOF
+}
+
+ordone() {
+cat << EOF
+orDone: = func(done, c <-chan interface {}) <-chan interface {} {
+    valStream := make(chan interface {})
+    go func() {
+        defer close(valStream)
+        for {
+            select {
+                case <-done:
+                    return
+                case v, ok := <-c:
+                    if ok == false {
+                        return
+                    }
+                    select {
+                        case valStream <-v:
+                        case <-done:
+                    }
+            }
+        }
+    }()
+    return valStream
+}
+
+for val := range orDone(done, myChan) {
+    // Do something with val
+}
+
+EOF
+}
+
+syncwait() {
+cat << EOF
+var wg sync.WaitGroup
+
+wg.Add(1)
+go func() {
+    defer wg.Done()
+    fmt.Println("1st goroutine sleeping...")
+    time.Sleep(1)
+}()
+wg.Wait()
+
+EOF
+}

@@ -15,6 +15,33 @@ ledgersnip() {
     source "$SNIPPETS/ledger-expense.sh"
 
     case $2 in
+    "amexcobalt")
+        amexcobalt "${@:3}"
+        ;;
+    "amexgold")
+        amexgold "${@:3}"
+        ;;
+    "youchoy")
+        youchoy "${@:3}"
+        ;;
+    "gailan")
+        gailan "${@:3}"
+        ;;
+    "yellowpotato")
+        yellowpotato "${@:3}"
+        ;;
+    "garlic")
+        garlic "${@:3}"
+        ;;
+    "greenonion")
+        greenonion "${@:3}"
+        ;;
+    "broccoli")
+        broccoli "${@:3}"
+        ;;
+    "alcohol")
+        alcohol "${@:3}"
+        ;;
     "income")
         income "${@:3}"
         ;;
@@ -57,8 +84,8 @@ ledgersnip() {
     "carrot")
         carrot "${@:3}"
         ;;
-    "onion")
-        onion "${@:3}"
+    "yellowonion")
+        yellowonion "${@:3}"
         ;;
     "pepper")
         pepper "${@:3}"
@@ -126,6 +153,12 @@ ledgersnip() {
     "bubble")
         bubble "${@:3}"
         ;;
+    "lime")
+        lime "${@:3}"
+        ;;
+    "lemon")
+        lemon "${@:3}"
+        ;;
     *)
         echo "You did not enter a number between 1 and 3."
         ;;
@@ -186,6 +219,15 @@ gsnip() {
         ;;
       "mt")
         mt "${@:3}"
+        ;;
+    "forselect")
+        forselect "${@:3}"
+        ;;
+    "ordone")
+        ordone "${@:3}"
+        ;;
+    "syncwait")
+        syncwait "${@:3}"
         ;;
       *)
         echo "Snippet not implemented for C"

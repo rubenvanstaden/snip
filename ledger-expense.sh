@@ -86,3 +86,10 @@ cat << EOF
 EOF
 
 }
+
+alcohol() {
+cat << EOF
+    Expense:Dining:Alcohol    $1 CAD
+EOF
+
+}
