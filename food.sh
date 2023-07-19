@@ -7,6 +7,18 @@ cat << EOF
 EOF
 }
 
+sugar() {
+cat << EOF
+    Expense:Food:Grocery:Sugar    $1 CAD
+EOF
+}
+
+salt() {
+cat << EOF
+    Expense:Food:Grocery:Salt    $1 CAD
+EOF
+}
+
 cherry() {
 cat << EOF
     Expense:Food:Fruit:Cherry    $1 CAD

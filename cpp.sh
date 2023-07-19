@@ -100,7 +100,7 @@ void bfs(Node *root) {
 EOF
 }
 
-tree-node() {
+treenode() {
 cat << "EOF"
 struct Node {
     int data;
