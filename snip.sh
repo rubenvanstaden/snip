@@ -8,15 +8,40 @@ set -e
 
 ledgersnip() {
 
-    source "$SNIPPETS/ledger-entry.sh"
-    source "$SNIPPETS/ledger-vegetable.sh"
-    source "$SNIPPETS/ledger-fruit.sh"
-    source "$SNIPPETS/ledger-health.sh"
-    source "$SNIPPETS/ledger-expense.sh"
+    . "$SNIPPETS/entry.sh"
+    . "$SNIPPETS/food.sh"
+    . "$SNIPPETS/vegetable.sh"
+    . "$SNIPPETS/fruit.sh"
+    . "$SNIPPETS/health.sh"
+    . "$SNIPPETS/expense.sh"
 
     case $2 in
-    "td")
-        td "${@:3}"
+    "donggua")
+        donggua "${@:3}"
+        ;;
+    "daikon")
+        daikon "${@:3}"
+        ;;
+    "cherry")
+        cherry "${@:3}"
+        ;;
+    "bokchoy")
+        bokchoy "${@:3}"
+        ;;
+    "eggplant")
+        eggplant "${@:3}"
+        ;;
+    "tofu")
+        tofu "${@:3}"
+        ;;
+    "pork")
+        pork "${@:3}"
+        ;;
+    "beef")
+        beef "${@:3}"
+        ;;
+    "chicken")
+        chicken "${@:3}"
         ;;
     "heyorca")
         heyorca "${@:3}"

@@ -4,7 +4,12 @@ apple() {
 cat << EOF
     Expense:Food:Fruit:Apple    $1 CAD
 EOF
+}
 
+cherry() {
+cat << EOF
+    Expense:Food:Fruit:Cherry    $1 CAD
+EOF
 }
 
 pinapple() {

@@ -1,10 +1,41 @@
 #!/usr/bin/env bash
 
+tofu() {
+cat << EOF
+    Expense:Food:Vegetable:Tofu   $1 CAD
+EOF
+}
+
+# Chinese winter melon
+donggua() {
+cat << EOF
+    Expense:Food:Vegetable:Dong Gua   $1 CAD
+EOF
+}
+
+# Chinese white radish
+daikon() {
+cat << EOF
+    Expense:Food:Vegetable:Daikon   $1 CAD
+EOF
+}
+
+bokchoy() {
+cat << EOF
+    Expense:Food:Vegetable:Bok Choy   $1 CAD
+EOF
+}
+
+eggplant() {
+cat << EOF
+    Expense:Food:Vegetable:Eggplant   $1 CAD
+EOF
+}
+
 garlic() {
 cat << EOF
     Expense:Food:Vegetable:Garlic   $1 CAD
 EOF
-
 }
 
 carrot() {
