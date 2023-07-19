@@ -1,9 +1,34 @@
 #!/usr/bin/env bash
 
+heyorca() {
+cat << EOF
+2023/$1/$2 * HeyOrca
+    Asset:Checking:Tangerine   $3 CAD
+    Income:Salary
+EOF
+
+}
+
+tangerine() {
+cat << EOF
+2023/$1/$2 * $3
+    Asset:Checking:Tangerine
+EOF
+
+}
+
 amexcobalt() {
 cat << EOF
 2023/$1/$2 * $3
     Liability:Credit Card:Amex Cobalt
+EOF
+
+}
+
+td() {
+cat << EOF
+2023/$1/$2 * $3
+    Liability:Credit Card:TD Infinite
 EOF
 
 }

@@ -15,6 +15,15 @@ ledgersnip() {
     source "$SNIPPETS/ledger-expense.sh"
 
     case $2 in
+    "td")
+        td "${@:3}"
+        ;;
+    "heyorca")
+        heyorca "${@:3}"
+        ;;
+    "tangerine")
+        tangerine "${@:3}"
+        ;;
     "amexcobalt")
         amexcobalt "${@:3}"
         ;;
@@ -205,6 +214,9 @@ cppsnip() {
 gsnip() {
     source "$SNIPPETS/go-vanilla.sh"
     case $2 in
+      "if")
+        iff "${@:3}"
+        ;;
       "iter")
         iter "${@:3}"
         ;;

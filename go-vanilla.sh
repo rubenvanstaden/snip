@@ -23,9 +23,15 @@ EOF
 err() {
 cat << EOF
     if err != nil {
-        log.Fatalf("$1: %v", err)
+        return err
     }
+EOF
+}
 
+iff() {
+cat << EOF
+    if $1 {
+    }
 EOF
 }
 
@@ -58,6 +64,21 @@ for {
     }
 }
 
+EOF
+}
+
+goforsel() {
+cat << EOF
+go func() {
+    for {
+        select {
+        case <-done:
+            return
+        case v := <-c:
+            // Process value
+        }
+    }
+}()
 EOF
 }
 
@@ -95,12 +116,10 @@ EOF
 syncwait() {
 cat << EOF
 var wg sync.WaitGroup
-
 wg.Add(1)
 go func() {
     defer wg.Done()
-    fmt.Println("1st goroutine sleeping...")
-    time.Sleep(1)
+    // add function logic
 }()
 wg.Wait()
 
