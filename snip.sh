@@ -175,7 +175,7 @@ ledgersnip() {
 }
 
 shsnip() {
-    source "$SNIPPETS/sh.sh"
+    source "$SNIPPETS/bash.sh"
     if [[ "$2" == "match" ]]; then
         match "${@:3}"
     fi
@@ -248,7 +248,7 @@ gsnip() {
 }
 
 rsnip() {
-    source "$SNIPPETS/rs-vanilla.sh"
+    source "$SNIPPETS/rust.sh"
     if [[ "$2" == "iflet" ]]; then
         iflet "${@:3}"
     fi
@@ -264,8 +264,6 @@ rsnip() {
     if [[ "$2" == "test" ]]; then
         test
     fi
-
-    source "$SNIPPETS/rs-data-structure.sh"
     if [[ "$2" == "graph" ]]; then
         graph
     fi
@@ -283,7 +281,7 @@ if [[ "$1" == rs ]]; then
     rsnip "$@"
 fi
 
-if [[ "$1" == sh ]]; then
+if [[ "$1" == bash ]]; then
     shsnip "$@"
 fi
 
