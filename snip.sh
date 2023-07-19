@@ -175,14 +175,14 @@ ledgersnip() {
 }
 
 shsnip() {
-    source "$SNIPPETS/sh-vanilla.sh"
+    source "$SNIPPETS/sh.sh"
     if [[ "$2" == "match" ]]; then
         match "${@:3}"
     fi
 }
 
 csnip() {
-    source "$SNIPPETS/c-vanilla.sh"
+    source "$SNIPPETS/c.sh"
     case $2 in
       "iter")
         iter "${@:3}"
@@ -212,7 +212,7 @@ cppsnip() {
 }
 
 gsnip() {
-    source "$SNIPPETS/go-vanilla.sh"
+    source "$SNIPPETS/go.sh"
     case $2 in
       "if")
         iff "${@:3}"
