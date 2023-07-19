@@ -9,7 +9,7 @@ set -e
 ledgersnip() {
 
     source "$SNIPPETS/ledger-entry.sh"
-    source "$SNIPPETS/ledger-food.sh"
+    source "$SNIPPETS/ledger-vegetable.sh"
     source "$SNIPPETS/ledger-fruit.sh"
     source "$SNIPPETS/ledger-health.sh"
     source "$SNIPPETS/ledger-expense.sh"
@@ -197,7 +197,7 @@ csnip() {
 }
 
 cppsnip() {
-    source "$SNIPPETS/cpp-vanilla.sh"
+    source "$SNIPPETS/cpp.sh"
     case $2 in
       "iter")
         iter "${@:3}"
