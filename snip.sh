@@ -10,8 +10,6 @@ ledgersnip() {
 
     . "$SNIPPETS/entry.sh"
     . "$SNIPPETS/food.sh"
-    . "$SNIPPETS/vegetable.sh"
-    . "$SNIPPETS/fruit.sh"
     . "$SNIPPETS/health.sh"
     . "$SNIPPETS/expense.sh"
 
