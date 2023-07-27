@@ -84,32 +84,30 @@ EOF
 
 ordone() {
 cat << EOF
-orDone: = func(done, c <-chan interface {}) <-chan interface {} {
+orDone := func(done, c <-chan interface {}) <-chan interface {} {
     valStream := make(chan interface {})
     go func() {
         defer close(valStream)
         for {
             select {
-                case <-done:
+            case <-done:
+                return
+            case v, ok := <-c:
+                if ok == false {
                     return
-                case v, ok := <-c:
-                    if ok == false {
-                        return
-                    }
-                    select {
-                        case valStream <-v:
-                        case <-done:
-                    }
+                }
+                select {
+                    case valStream <-v:
+                    case <-done:
+                }
             }
         }
     }()
     return valStream
 }
-
 for val := range orDone(done, myChan) {
     // Do something with val
 }
-
 EOF
 }
 
