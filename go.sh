@@ -126,7 +126,7 @@ wg.Wait()
 EOF
 }
 
-test-table() {
+testunit() {
 cat << "EOF"
 func TestUnit(t *testing.T) {
 	cases := []struct {

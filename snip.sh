@@ -209,15 +209,25 @@ ledgersnip() {
 	esac
 }
 
-shsnip() {
+bashsnip() {
+
 	. "$SNIPPETS/bash.sh"
+
 	if [[ "$2" == "match" ]]; then
 		match "${@:3}"
+	fi
+	if [[ "$2" == "here" ]]; then
+		here "${@:3}"
+	fi
+	if [[ "$2" == "shebang" ]]; then
+		shebang "${@:3}"
 	fi
 }
 
 csnip() {
+
 	. "$SNIPPETS/c.sh"
+
 	case $2 in
 	"iter")
 		iter "${@:3}"
@@ -279,6 +289,9 @@ gosnip() {
 	"syncwait")
 		syncwait "${@:3}"
 		;;
+	"test")
+		testunit "${@:3}"
+		;;
 	*)
 		echo "Snippet not implemented for C"
 		;;
@@ -286,7 +299,29 @@ gosnip() {
 }
 
 rustsnip() {
+
 	. "$SNIPPETS/rust.sh"
+
+	if [[ "$2" == "impl" ]]; then
+		impl "${@:3}"
+	fi
+
+	if [[ "$2" == "vec" ]]; then
+		vec "${@:3}"
+	fi
+
+	if [[ "$2" == "while" ]]; then
+		whilefn "${@:3}"
+	fi
+
+	if [[ "$2" == "if" ]]; then
+		iffn "${@:3}"
+	fi
+
+	if [[ "$2" == "whilelet" ]]; then
+		whilelet "${@:3}"
+	fi
+
 	if [[ "$2" == "iflet" ]]; then
 		iflet "${@:3}"
 	fi
