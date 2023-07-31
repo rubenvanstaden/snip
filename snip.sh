@@ -17,6 +17,9 @@ ledgersnip() {
 	. "$SNIPPETS/food.sh"
 
 	case $2 in
+	"rice")
+		rice "${@:3}"
+		;;
 	"sugar")
 		sugar "${@:3}"
 		;;
@@ -107,11 +110,8 @@ ledgersnip() {
 	"taxi")
 		taxi "${@:3}"
 		;;
-	"streaming")
-		streaming "${@:3}"
-		;;
-	"software")
-		software "${@:3}"
+	"subscription")
+		subscription "${@:3}"
 		;;
 	"internet")
 		internet "${@:3}"

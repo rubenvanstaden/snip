@@ -9,7 +9,6 @@ int main() {
     return 0;
 }
 EOF
-
 }
 
 iter() {
@@ -17,7 +16,6 @@ cat << EOF
 for (int i = 0; i < $1; i++) {
 }
 EOF
-
 }
 
 # snip c malloc int
@@ -31,7 +29,6 @@ if (arr == NULL) {
 }
 free(arr);
 EOF
-
 }
 
 assert() {
@@ -47,7 +44,6 @@ bool assert_arrays_equal(int *arr1[], int *arr2[], int size) {
     }
 }
 EOF
-
 }
 
 swap() {
@@ -58,5 +54,4 @@ void swap(int *nums, int i, int j) {
     nums[j] = t;
 }
 EOF
-
 }

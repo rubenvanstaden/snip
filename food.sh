@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+rice() {
+cat << EOF
+    Expense:Food:Grocery:Rice    $1 CAD
+EOF
+}
 
 apple() {
 cat << EOF

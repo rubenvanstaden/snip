@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 
-streaming() {
-cat << EOF
-    Expense:Subscription:Streaming    $1 CAD
-EOF
-}
-
-software() {
+subscription() {
 cat << EOF
     Expense:Subscription:Software    $1 CAD
 EOF
