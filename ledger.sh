@@ -1,5 +1,105 @@
 #!/usr/bin/env bash
 
+subscription() {
+cat << EOF
+    Expense:Subscription:Software    $1 CAD
+EOF
+}
+
+bubble() {
+cat << EOF
+    Expense:Dining:Bubble Tea    $1 CAD
+EOF
+}
+
+# Software, Finance
+course() {
+cat << EOF
+    Expense:Course:$1    $2 CAD
+EOF
+}
+
+# Flight, Loding, Food
+travel() {
+cat << EOF
+    Expense:Travel:$1    $2 CAD
+EOF
+
+}
+
+internet() {
+cat << EOF
+    Expense:Utility:Internet    $1 CAD
+EOF
+}
+
+# Mobile data only.
+mobile() {
+cat << EOF
+    Expense:Utility:Mobile    $1 CAD
+EOF
+}
+
+taxi() {
+cat << EOF
+    Expense:Transport:Taxi    $1 CAD
+EOF
+}
+
+metro() {
+cat << EOF
+    Expense:Transport:Metro    $1 CAD
+EOF
+}
+
+coffee() {
+cat << EOF
+    Expense:Dining:Coffee    $1 CAD
+EOF
+}
+
+resto() {
+cat << EOF
+    Expense:Dining:Restuarant    $1 CAD
+EOF
+}
+
+takeout() {
+cat << EOF
+    Expense:Dining:Takeout    $1 CAD
+EOF
+}
+
+alcohol() {
+cat << EOF
+    Expense:Dining:Alcohol    $1 CAD
+EOF
+}
+
+skin() {
+cat << EOF
+    Expense:Health:Skin    $1 CAD
+EOF
+}
+
+acupunture() {
+cat << EOF
+    Expense:Health:Acupuncture    $1 CAD
+EOF
+}
+
+supplement() {
+cat << EOF
+    Expense:Health:Supplement    $1 CAD
+EOF
+}
+
+dental() {
+cat << EOF
+    Expense:Health:Dental    $1 CAD
+EOF
+}
+
 rice() {
 cat << EOF
     Expense:Food:Grocery:Rice    $1 CAD
@@ -260,4 +360,54 @@ cat << EOF
     Expense:Food:Vegetable:You Choy     $1 CAD
 EOF
 
+}
+
+heyorca() {
+cat << EOF
+2023/$1/$2 * HeyOrca
+    Asset:Checking:Tangerine   $3 CAD
+    Income:Salary
+EOF
+}
+
+tangerine() {
+cat << EOF
+2023/$1/$2 * $3
+    Asset:Checking:Tangerine
+EOF
+}
+
+amexcobalt() {
+cat << EOF
+2023/$1/$2 * $3
+    Liability:Credit Card:Amex Cobalt
+EOF
+}
+
+td() {
+cat << EOF
+2023/$1/$2 * $3
+    Liability:Credit Card:TD Infinite
+EOF
+}
+
+amexgold() {
+cat << EOF
+2023/$1/$2 * $3
+    Liability:Credit Card:Amex Gold
+EOF
+}
+
+scotia() {
+cat << EOF
+2023/$1/$2 * $3
+    Asset:Scotia:Checking
+EOF
+}
+
+income() {
+cat << EOF
+2023/$1/$2 * $3
+    Income:Salary
+EOF
 }

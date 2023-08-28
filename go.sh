@@ -8,7 +8,6 @@ range() {
 cat << EOF
     for i, v := range $1 {
     }
-
 EOF
 }
 
@@ -16,7 +15,6 @@ iter() {
 cat << EOF
     for i := 0; i < $1; i++ {
     }
-
 EOF
 }
 
@@ -40,7 +38,6 @@ cat << EOF
 func $1($2) error {
     return nil
 }
-
 EOF
 }
 
@@ -49,35 +46,36 @@ cat << EOF
 func (s *$1) $2($3) error {
     return nil
 }
-
 EOF
 }
 
-forselect() {
+multiplex() {
+cat << EOF
+select {
+case <-ch1:
+case x := <-ch2:
+case ch3 <- y:
+default:
+}
+EOF
+}
+
+polling() {
 cat << EOF
 for {
     select {
-        case <-done:
-            return
-        default:
-            // Do non-preemptable work
+    case <-done:
+        return
+    default:
+        // Do non-preemptable work
     }
 }
-
 EOF
 }
 
-goforsel() {
+gofn() {
 cat << EOF
 go func() {
-    for {
-        select {
-        case <-done:
-            return
-        case v := <-c:
-            // Process value
-        }
-    }
 }()
 EOF
 }
@@ -120,7 +118,6 @@ go func() {
     // add function logic
 }()
 wg.Wait()
-
 EOF
 }
 

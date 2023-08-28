@@ -10,11 +10,9 @@ esc="\033"
 red="${esc}[31m"
 reset="${esc}[0m"
 
-ledgersnip() {
+ledger() {
 
-	. "$SNIPPETS/entry.sh"
-	. "$SNIPPETS/expense.sh"
-	. "$SNIPPETS/food.sh"
+	. "$SNIPPETS/ledger.sh"
 
 	case $2 in
 	"rice")
@@ -209,7 +207,7 @@ ledgersnip() {
 	esac
 }
 
-bashsnip() {
+bash() {
 
 	. "$SNIPPETS/bash.sh"
 
@@ -224,7 +222,7 @@ bashsnip() {
 	fi
 }
 
-csnip() {
+c() {
 
 	. "$SNIPPETS/c.sh"
 
@@ -241,7 +239,7 @@ csnip() {
 	esac
 }
 
-cppsnip() {
+cpp() {
 	. "$SNIPPETS/cpp.sh"
 	case $2 in
 	"iter")
@@ -259,7 +257,7 @@ cppsnip() {
 	esac
 }
 
-gosnip() {
+go() {
 	. "$SNIPPETS/go.sh"
 	case $2 in
 	"if")
@@ -280,8 +278,14 @@ gosnip() {
 	"mt")
 		mt "${@:3}"
 		;;
-	"forselect")
-		forselect "${@:3}"
+	"gofn")
+		gofn "${@:3}"
+		;;
+	"mx")
+		multiplex "${@:3}"
+		;;
+	"poll")
+		polling "${@:3}"
 		;;
 	"ordone")
 		ordone "${@:3}"
@@ -298,7 +302,7 @@ gosnip() {
 	esac
 }
 
-rustsnip() {
+rust() {
 
 	. "$SNIPPETS/rust.sh"
 
@@ -344,22 +348,22 @@ rustsnip() {
 
 case $1 in
 "bash")
-	bashsnip "$@"
-	;;
-"go")
-	gosnip "$@"
-	;;
-"rust")
-	rustsnip "$@"
+	bash "$@"
 	;;
 "ledger")
-	ledgersnip "$@"
+	ledger "$@"
 	;;
 "c")
-	csnip "$@"
+	c "$@"
+	;;
+"go")
+	go "$@"
+	;;
+"rust")
+	rust "$@"
 	;;
 "cpp")
-	cppsnip "$@"
+	cpp "$@"
 	;;
 *)
 	echo ""
