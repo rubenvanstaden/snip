@@ -4,6 +4,54 @@
 
 set -e
 
+makefile() {
+cat << EOF
+fmt:
+	go mod tidy -compat=1.17
+	gofmt -l -s -w .
+
+run:
+	go run .
+EOF
+}
+
+http() {
+cat << EOF
+package main
+
+import (
+	"fmt"
+	"io"
+	"log"
+	"net/http"
+)
+
+func handle(w http.ResponseWriter, r *http.Request) {
+    log.Println("wekjfjwef")
+    if r.Method == "POST" {
+        body, err := io.ReadAll(r.Body)
+        if err != nil {
+            http.Error(w, "Error reading request body", http.StatusInternalServerError)
+        } else {
+            fmt.Printf("Highlighted Text: %s\n", string(body))
+        }
+    } else {
+        http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
+    }
+}
+
+func main() {
+
+    fs := http.FileServer(http.Dir("./static"))
+    http.Handle("/", fs)
+
+    http.HandleFunc("/highlight", handle)
+
+    http.ListenAndServe(":8080", nil)
+}
+EOF
+}
+
 range() {
 cat << EOF
     for i, v := range $1 {

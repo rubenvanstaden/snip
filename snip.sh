@@ -10,11 +10,86 @@ esc="\033"
 red="${esc}[31m"
 reset="${esc}[0m"
 
+cfg() {
+	. "$SNIPPETS/cfg.sh"
+	case $2 in
+	"dex")
+		dex "${@:3}"
+		;;
+	"rvs")
+		rvs "${@:3}"
+		;;
+	*)
+		echo "Snippet not implemented for hypermedia"
+		;;
+	esac
+}
+
+html() {
+	. "$SNIPPETS/html.sh"
+	case $2 in
+	"htmx")
+		htmx "${@:3}"
+		;;
+	"css")
+		css "${@:3}"
+		;;
+	*)
+		echo "Snippet not implemented for hypermedia"
+		;;
+	esac
+}
+
 ledger() {
 
 	. "$SNIPPETS/ledger.sh"
 
 	case $2 in
+	"milk")
+		milk "${@:3}"
+		;;
+	"blueberry")
+		blueberry "${@:3}"
+		;;
+	"onion")
+		onion "${@:3}"
+		;;
+	"pasta")
+		pasta "${@:3}"
+		;;
+	"watermelon")
+		watermelon "${@:3}"
+		;;
+	"avocado")
+		avocado "${@:3}"
+		;;
+	"plums")
+		plums "${@:3}"
+		;;
+	"butternut")
+		butternut "${@:3}"
+		;;
+	"beetroot")
+		beetroot "${@:3}"
+		;;
+	"chocolate")
+		chocolate "${@:3}"
+		;;
+	"egg")
+		egg "${@:3}"
+		;;
+	"cloths")
+		cloths "${@:3}"
+		;;
+	"shoes")
+		shoes "${@:3}"
+		;;
+	"jewelry")
+		jewelry "${@:3}"
+		;;
+	"date")
+		date "${@:3}"
+		;;
 	"rice")
 		rice "${@:3}"
 		;;
@@ -72,8 +147,8 @@ ledger() {
 	"gailan")
 		gailan "${@:3}"
 		;;
-	"yellowpotato")
-		yellowpotato "${@:3}"
+	"potato")
+		potato "${@:3}"
 		;;
 	"garlic")
 		garlic "${@:3}"
@@ -105,8 +180,8 @@ ledger() {
 	"metro")
 		metro "${@:3}"
 		;;
-	"taxi")
-		taxi "${@:3}"
+	"car")
+		car "${@:3}"
 		;;
 	"subscription")
 		subscription "${@:3}"
@@ -227,6 +302,15 @@ c() {
 	. "$SNIPPETS/c.sh"
 
 	case $2 in
+	"open")
+		open "${@:3}"
+		;;
+	"makefile")
+		makefile "${@:3}"
+		;;
+	"main")
+		main "${@:3}"
+		;;
 	"iter")
 		iter "${@:3}"
 		;;
@@ -242,6 +326,9 @@ c() {
 cpp() {
 	. "$SNIPPETS/cpp.sh"
 	case $2 in
+	"main")
+		main "${@:3}"
+		;;
 	"iter")
 		iter "${@:3}"
 		;;
@@ -259,7 +346,14 @@ cpp() {
 
 go() {
 	. "$SNIPPETS/go.sh"
+
 	case $2 in
+	"makefile")
+		makefile "${@:3}"
+		;;
+	"http")
+		http "${@:3}"
+		;;
 	"if")
 		iff "${@:3}"
 		;;
@@ -347,6 +441,12 @@ rust() {
 }
 
 case $1 in
+"cfg")
+	cfg "$@"
+	;;
+"html")
+	html "$@"
+	;;
 "bash")
 	bash "$@"
 	;;

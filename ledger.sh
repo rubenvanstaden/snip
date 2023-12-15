@@ -1,30 +1,135 @@
 #!/usr/bin/env bash
 
+chocolate() {
+cat << EOF
+    Expense:Food:Snack:Chocolate    $1 CAD
+EOF
+}
+
+blueberry() {
+cat << EOF
+    Expense:Food:Fruit:Blueberry    $1 CAD
+EOF
+}
+
+onion() {
+cat << EOF
+    Expense:Food:Vegetable:Onion    $1 CAD
+EOF
+}
+
+pasta() {
+cat << EOF
+    Expense:Food:Grain:Pasta    $1 CAD
+EOF
+}
+
+watermelon() {
+cat << EOF
+    Expense:Food:Fruit:Watermelon    $1 CAD
+EOF
+}
+
+avocado() {
+cat << EOF
+    Expense:Food:Vegetable:Avocado    $1 CAD
+EOF
+}
+
+beetroot() {
+cat << EOF
+    Expense:Food:Vegetable:Beetroot    $1 CAD
+EOF
+}
+
+plums() {
+cat << EOF
+    Expense:Food:Fruit:Plums    $1 CAD
+EOF
+}
+
+milk() {
+cat << EOF
+    Expense:Food:Dairy:Milk    $1 CAD
+EOF
+}
+
+egg() {
+cat << EOF
+    Expense:Food:Dairy:Egg    $1 CAD
+EOF
+}
+
+cloths() {
+cat << EOF
+    Expense:Health:Cloths    $1 CAD
+EOF
+}
+
+shoes() {
+cat << EOF
+    Expense:Health:Shoes    $1 CAD
+EOF
+}
+
+jewelry() {
+cat << EOF
+    Expense:Health:Jewelry    $1 CAD
+EOF
+}
+
 subscription() {
 cat << EOF
     Expense:Subscription:Software    $1 CAD
 EOF
 }
 
+resto() {
+cat << EOF
+    Expense:Social:Restaurant    $1 CAD
+EOF
+}
+
+takeout() {
+cat << EOF
+    Expense:Social:Takeout    $1 CAD
+EOF
+}
+
+alcohol() {
+cat << EOF
+    Expense:Social:Alcohol    $1 CAD
+EOF
+}
+
+coffee() {
+cat << EOF
+    Expense:Social:Coffee    $1 CAD
+EOF
+}
+
+festival() {
+cat << EOF
+    Expense:Social:Festival     $1 CAD
+EOF
+}
+
+event() {
+cat << EOF
+    Expense:Social:Event    $1 CAD
+EOF
+}
+
+date() {
+cat << EOF
+    Expense:Social:Date Night    $1 CAD
+EOF
+}
+
 bubble() {
 cat << EOF
-    Expense:Dining:Bubble Tea    $1 CAD
+    Expense:Social:Bubble Tea    $1 CAD
 EOF
-}
-
-# Software, Finance
-course() {
-cat << EOF
-    Expense:Course:$1    $2 CAD
-EOF
-}
-
-# Flight, Loding, Food
-travel() {
-cat << EOF
-    Expense:Travel:$1    $2 CAD
-EOF
-
 }
 
 internet() {
@@ -40,39 +145,15 @@ cat << EOF
 EOF
 }
 
-taxi() {
+car() {
 cat << EOF
-    Expense:Transport:Taxi    $1 CAD
+    Expense:Transport:Car    $1 CAD
 EOF
 }
 
 metro() {
 cat << EOF
     Expense:Transport:Metro    $1 CAD
-EOF
-}
-
-coffee() {
-cat << EOF
-    Expense:Dining:Coffee    $1 CAD
-EOF
-}
-
-resto() {
-cat << EOF
-    Expense:Dining:Restuarant    $1 CAD
-EOF
-}
-
-takeout() {
-cat << EOF
-    Expense:Dining:Takeout    $1 CAD
-EOF
-}
-
-alcohol() {
-cat << EOF
-    Expense:Dining:Alcohol    $1 CAD
 EOF
 }
 
@@ -257,109 +338,100 @@ EOF
 }
 
 # Yellow, Sweet
-yellowpotato() {
+potato() {
 cat << EOF
-    Expense:Food:Vegetable:Potato Yellow   $1 CAD
+    Expense:Food:Vegetable:Potato      $1 CAD
 EOF
+}
 
+butternut() {
+cat << EOF
+    Expense:Food:Vegetable:Butternut    $1 CAD
+EOF
 }
 
 pepper() {
 cat << EOF
     Expense:Food:Vegetable:Pepper    $1 CAD
 EOF
-
 }
 
 ginger() {
 cat << EOF
     Expense:Food:Vegetable:Ginger    $1 CAD
 EOF
-
 }
 
 lettuce() {
 cat << EOF
     Expense:Food:Vegetable:Lettuce    $1 CAD
 EOF
-
 }
 
 spinach() {
 cat << EOF
     Expense:Food:Vegetable:Spinach    $1 CAD
 EOF
-
 }
 
 tomato() {
 cat << EOF
     Expense:Food:Vegetable:Tomato    $1 CAD
 EOF
-
 }
 
 mushroom() {
 cat << EOF
     Expense:Food:Vegetable:Mushroom    $1 CAD
 EOF
-
 }
 
 corn() {
 cat << EOF
     Expense:Food:Vegetable:Corn    $1 CAD
 EOF
-
 }
 
 cucumber() {
 cat << EOF
     Expense:Food:Vegetable:Cucumber    $1 CAD
 EOF
-
 }
 
 asparagus() {
 cat << EOF
     Expense:Food:Vegetable:Asparagus    $1 CAD
 EOF
-
 }
 
 edamame() {
 cat << EOF
     Expense:Food:Vegetable:Edamame    $1 CAD
 EOF
-
 }
 
 broccoli() {
 cat << EOF
     Expense:Food:Vegetable:Broccoli    $1 CAD
 EOF
-
 }
 
 greenonion() {
 cat << EOF
     Expense:Food:Vegetable:Green Onion    $1 CAD
 EOF
-
 }
 
 gailan() {
 cat << EOF
     Expense:Food:Vegetable:Gai Lan     $1 CAD
 EOF
-
 }
 
 youchoy() {
 cat << EOF
     Expense:Food:Vegetable:You Choy     $1 CAD
 EOF
-
 }
 
 heyorca() {

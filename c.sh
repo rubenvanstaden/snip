@@ -1,5 +1,25 @@
 #!/usr/bin/env bash
 
+open() {
+cat << "EOF"
+FILE *fp = fopen("test.txt", "r");
+if (fp == NULL) {
+    fputs("Cannot open file\n", stderr);
+    return EXIT_FAILURE;
+}
+EOF
+}
+
+makefile() {
+cat << "EOF"
+build:
+	clang -o run main.c
+
+run:
+    ./run
+EOF
+}
+
 main() {
 cat << "EOF"
 #include <stdio.h>
